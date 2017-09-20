@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="shortcut icon" href="images/fav-ph.png">
+    <title>Do You Even Steam</title>
+  </head>
+  <body>
+
+    <nav> <!-- This will be the main nav for all page transfers -->
+      <img id="nav-bg" src="" alt="Navigation background image">
+      <ul id ="nav-tabs">
+        <li>"Home"</li>
+        <li>"Your Games"</li>
+        <li>"Leaderboard"</li>
+        <li>"Help"</li>
+        <li>"About"</li>
+      </ul>
+    </nav>
+
+    <main>
+      <img id="main-bg" src="" alt="Main background image">
+      <section class="form-section">
+        <h1>Sign up</h1>
+        <p>Sign into your steam account to create a DYES account!</p>
+        <p>Signing in give you the ability to:</p>
+        <ul>
+          <li>Submit times to leaderboards.</li>
+          <li>See your unique steam data.</li>
+          <li>Compare stats against friends and global averages.</li>
+          <li>Win prizes including games, trading cards, backgrounds, emotes, and items!</li>
+        </ul>
+        <div id="sign-up-form-container">
+          <form id="sign-up-form">
+            <label>(Steam Passport will go here eventually)</label>
+            <button type="button" name="button">Sign in</button>
+          </form>
+        </div>
+      </section>
+      <section class="form-section">
+        <h1> Check Any Public Steam Profile!</h1>
+        <p> Enter any Steam Id to checl out that user's stats! Only have a string of numbers? No problem, just enter it in and we'll do the rest! Note that the user MUST have their profile set to public for this to work.</p>
+        <div id="public-form-container"> <!-- Main form to use app . No sign-in req.-->
+          <form id="public-form">
+            <label>Enter any Steam Id<input type="text" placeholder="killertreat" required="true"></label>
+            <button type="button" name="submit">Submit</button>
+          </form>
+
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
