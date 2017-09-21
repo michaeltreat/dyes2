@@ -13,6 +13,7 @@
       <img id="nav-bg" src="" alt="Navigation background image">
       <ul id ="nav-tabs">
         <li>"Home"</li>
+        <li>"Stats"</li>
         <li>"Your Games"</li>
         <li>"Leaderboard"</li>
         <li>"Help"</li>
@@ -22,6 +23,7 @@
 
     <main>
       <img id="main-bg" src="" alt="Main background image">
+
       <section class="form-section">
         <h1>Sign up</h1>
         <p>Sign into your steam account to create a DYES account!</p>
@@ -32,10 +34,10 @@
           <li>Compare stats against friends and global averages.</li>
           <li>Win prizes including games, trading cards, backgrounds, emotes, and items!</li>
         </ul>
-        <div id="sign-up-form-container">
-          <form id="sign-up-form">
+        <div id="passport-container">
+          <form id="passport-form">
             <label>(Steam Passport will go here eventually)</label>
-            <button type="button" name="button">Sign in</button>
+            <button id="passport-submit" type="submit">Sign in</button>
           </form>
         </div>
       </section>
@@ -44,12 +46,17 @@
         <p> Enter any Steam Id to checl out that user's stats! Only have a string of numbers? No problem, just enter it in and we'll do the rest! Note that the user MUST have their profile set to public for this to work.</p>
         <div id="public-form-container"> <!-- Main form to use app . No sign-in req.-->
           <form id="public-form">
-            <label>Enter any Steam Id<input type="text" placeholder="killertreat" required="true"></label>
-            <button type="button" name="submit">Submit</button>
+            <label>Enter any Steam Id<input type="text" value="killertreat" required="true"></label>
+            <button type="submit">Submit</button>
           </form>
 
         </div>
       </section>
     </main>
+
   </body>
+  <script type="text/javascript" src="./view.js"></script>
+  <script type="text/javascript" src="../model/anonUserModel.js"></script>
+  <script type="text/javascript" src="../model/leaderboardModel.js"></script>
+  <script type="text/javascript" src="../model/passportUserModel.js"></script>
 </html>
