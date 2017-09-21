@@ -1,11 +1,24 @@
 'use strict';
-var x = 1;
-var x = 2;
 
 const anonUser = {
-  selectedUser: ""
+  query: '', // What the anonUser enters into the form.
+  selectedUser: { // The user that's returned from SteamAPI.
+    data: {},
+  },
+
 };
-user.getSteamData = function(selectedUser, callback){
-  // Makeasf call to get the correct Steam Id in the event that a
-  // user enters in url-number instead of a vanity url.
+
+
+anonUser.getSteamData = function(steamID, callback){
+  // Gets the user from the Steam API.
+  // If err, try anonUser.getSteamID(steamID)
 };
+
+anonUser.getSteamID = function(vanityURL, callback){
+  // If anonUser.getSteamData() returns err, this function will be called.
+
+  // Make call to get the correct SteamID.
+  // If anonUser.getSteamID(vanityURL) returns success
+  //    .then( steamID => anonUser.getSteamData(steamID) )
+  // else alert user to error 'No user found....'
+}
