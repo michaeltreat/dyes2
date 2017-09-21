@@ -19,25 +19,27 @@ app.use(express.static('./public'))
 
 app.get('', (req,res) => {
   request.get()
-  .end(function(err,response){
+  .then()
+  .end(function(err,res){
     res.send()
   })
 })
 
 app.post('', (req, res) => {
-  .then( () => {
+
+  request.post().then( () => {
 
   }).catch()
 })
 
 app.put('', (req, res) => {
-  .then( () => {
+  request.put().then( () => {
 
   }).catch()
 })
 
 app.delete('', (req, res) => {
-  .then( () => {
+  request.delete().then( () => {
 
   }).catch()
 })

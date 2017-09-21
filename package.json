@@ -20,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/michaeltreat/dyes2/issues"
   },
-  "homepage": "https://github.com/michaeltreat/dyes2#readme"
+  "homepage": "https://github.com/michaeltreat/dyes2#readme",
+  "devDependencies": {
+    "eslint": "^4.7.1",
+    "eslint-plugin-react": "^7.3.0",
+    "eslint-config-google": "^1.0.0"
+  },
+  "dependencies": {
+
+  }
 }
