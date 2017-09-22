@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="shortcut icon" href="images/fav-ph.png">
+    <link rel="css/stylesheet" href="./view/styles/reset.css">
+    <link rel="css/stylesheet" href="./view/styles/base.css">
+    <link rel="shortcut icon" href="./view/images/fav-ph.png">
     <title>Do You Even Steam</title>
   </head>
   <body>
@@ -43,7 +44,7 @@
       </section>
       <section class="form-section">
         <h1> Check Any Public Steam Profile!</h1>
-        <p> Enter any Steam Id to checl out that user's stats! Only have a string of numbers? No problem, just enter it in and we'll do the rest! Note that the user MUST have their profile set to public for this to work.</p>
+        <p> Enter any Steam Id to check out that user's stats! Only have a string of numbers? No problem, just enter it in and we'll do the rest! Note that the user MUST have their profile set to public for this to work.</p>
         <div id="public-form-container"> <!-- Main form to use app . No sign-in req.-->
           <form id="public-form">
             <label>Enter any Steam Id<input type="text" value="killertreat" required="true"></label>
@@ -55,8 +56,8 @@
     </main>
 
   </body>
-  <script type="text/javascript" src="./view.js"></script>
-  <script type="text/javascript" src="../model/anonUserModel.js"></script>
-  <script type="text/javascript" src="../model/leaderboardModel.js"></script>
-  <script type="text/javascript" src="../model/passportUserModel.js"></script>
+  <script type="text/javascript" src="./model/anonUserModel.js"></script>
+  <script type="text/javascript" src="./model/leaderboardModel.js"></script>
+  <script type="text/javascript" src="./model/passportUserModel.js"></script>
+  <script type="text/javascript" src="./view/view.js"></script>
 </html>
