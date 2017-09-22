@@ -4,7 +4,7 @@ const pg = require('pg') // postgres database
 const request = require('superagent') // AJAX api
 const express = require('express') // middleware connector
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = 3000
 
 const conString = process.env.DATABASE || 'postgres://@localhost:5432/dyes'
 const client = new pg.Client(conString)
@@ -35,15 +35,33 @@ function createLeaderboardTable(){
 }
 createLeaderboardTable()
 
+// Routing for server
+
 app.use(express.static('./public'))
+app.listen(PORT,function(){
+  console.log('Server started on: ', PORT);
 
-app.listen( () =>{
-  console.log('connected on port', PORT)
 })
 
-app.get('/getSteamData', (req,res) => {
-  // Route to get a user's SteamData.
+app.get('/getSteamID', (req,res) => {
+  if(req.headers.vanityUrl){
+    request.get(`https://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${process.env.KEYs}&vanityurl=${req.headers.vanityUrl}`)
+    .end( function(err, response){
+      if(err) {
+        console.log('There was an error while trying to get the SteamID.\n\nerr.message:\n    ', err.status, err.message)
+        res.send(err.status, err.message)
+      }else{
+        console.log(`This is the response.body: ${response.body}`)
+        res.steamid = response.body.response.steamid
+        res.send(res.status, res.steamid)
+      }
+    })
+  }else{
+    res.status('400').send('400 Bad Request - The vanityUrl was not attached to the headers on your request.')
+    console.log('400 bad request- There is noting assigned to req.headers.vanityUrl.')
+  }
 })
+// Route to get a user's SteamData.
 
 app.get('/checkLeaderboard', (req, res) => {
   // Route to check if someone is already on the leaderboard.
@@ -61,8 +79,18 @@ app.delete('/removeFromLeaderboard', (req, res) => {
   // Removes a user from the leaderboard.
 })
 
-app.delete('', (req, res) => {
+app.delete('/delete', (req, res) => {
   request.delete().then( () => {
 
   }).catch()
+})
+
+app.get('/*', function(req, res) {
+  res.sendFile('public/view/index.html', {root: '.'}, function(err){
+    if(err){
+      console.log('error in sending file', err)
+    }else{
+      console.log('Sent: index.html')
+    }
+  })
 })
