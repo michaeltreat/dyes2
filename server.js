@@ -44,6 +44,7 @@ app.listen(PORT,function(){
 })
 
 app.get('/getSteamID', (req,res) => {
+  req.headers.vanityUrl = 'killertreat'
   if(req.headers.vanityUrl){
     request.get(`https://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${process.env.KEYs}&vanityurl=${req.headers.vanityUrl}`)
     .end( function(err, response){
@@ -85,12 +86,4 @@ app.delete('/delete', (req, res) => {
   }).catch()
 })
 
-app.get('/*', function(req, res) {
-  res.sendFile('public/view/index.html', {root: '.'}, function(err){
-    if(err){
-      console.log('error in sending file', err)
-    }else{
-      console.log('Sent: index.html')
-    }
-  })
-})
+app.get('/*', (request, response) => response.sendFile('./public/index.html', {root: '.'}));
