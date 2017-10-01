@@ -9,7 +9,6 @@ const PORT = 3000
 const conString = process.env.DATABASE || 'postgres://@localhost:5432/dyes'
 const client = new pg.Client(conString)
 
-
 client.connect() // Connects to postgres database
 
 // PSQL database Event Listeners
@@ -100,6 +99,5 @@ app.put('/updateLeaderboard', (req, res) => {
 app.delete('/removeFromLeaderboard', (req, res) => {
   // Removes a user from the leaderboard.
 })
-
 
 app.get('/*', (req, res) => res.sendFile('./public/index.html', {root: '.'}));
